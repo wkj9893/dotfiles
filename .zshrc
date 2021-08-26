@@ -12,3 +12,8 @@ export EDITOR="vim"
 export proxy="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):7890"
 export GOPATH="$HOME/.go"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# aliases
+alias vim=nvim
+alias start=wsl-start
+alias p="export http_proxy=$proxy && export https_proxy=$proxy"
