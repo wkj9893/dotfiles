@@ -16,7 +16,6 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # aliases
-alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias cat=bat
