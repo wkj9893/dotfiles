@@ -18,7 +18,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 # aliases
 alias vi=nvim
 alias vim=nvim
-alias cat=bat
 alias start=wsl-start
 alias p="export http_proxy=$proxy && export https_proxy=$proxy"
 alias up="unset http_proxy && unset https_proxy"
