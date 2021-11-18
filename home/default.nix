@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./tmux ./vscode ./zsh ];
+  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./texlive ./tmux ./vscode ./zsh ];
   programs.home-manager = {
     enable = true;
   };
@@ -20,9 +20,7 @@
 
   home.packages = with pkgs; [
     firefox-wayland
-    (pkgs.google-chrome.override {
-      commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode";
-    })
+    (pkgs.google-chrome.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode"; })
 
     clash
     gnumake

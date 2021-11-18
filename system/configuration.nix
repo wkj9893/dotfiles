@@ -12,6 +12,10 @@
   time.timeZone = "Asia/Shanghai";
 
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
