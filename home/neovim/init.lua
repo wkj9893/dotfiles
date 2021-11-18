@@ -17,8 +17,10 @@ local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-  use 'joshdick/onedark.vim' -- Theme inspired by Atom
-  use 'itchyny/lightline.vim' -- Fancier statusline
+  use 'navarasu/onedark.nvim'
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+
+  use 'dstein64/vim-startuptime'
 
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -46,12 +48,14 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
 
-vim.g.lightline = {
-  colorscheme = 'onedark',
+require('onedark').setup()
+require('lualine').setup {
+  options = {
+    theme = 'onedark'
+  }
 }
+
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })

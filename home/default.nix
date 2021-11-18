@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./vscode ./zsh ];
+  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./tmux ./vscode ./zsh ];
   programs.home-manager = {
     enable = true;
   };

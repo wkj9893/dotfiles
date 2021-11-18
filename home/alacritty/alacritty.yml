@@ -5,9 +5,22 @@ env:
   http_proxy: http://localhost:7890
   https_proxy: http://localhost:7890
 
+scrolling:
+  history: 0
+
+font:
+  normal:
+    family: CaskaydiaCove Nerd Font Mono
+    style: Regular
+  bold:
+    family: CaskaydiaCove Nerd Font Mono
+    style: Bold
+  italic:
+    family: CaskaydiaCove Nerd Font Mono
+    style: Italic
+
 # VSCode's integrated terminal default colors
 # Primary and dimmed colors needed
-
 colors:
   # Default colors
   primary:
