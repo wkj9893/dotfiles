@@ -30,6 +30,8 @@
     fd
     ripgrep
     fzf
+    tree
+    trash-cli
 
     deno
     rustup
