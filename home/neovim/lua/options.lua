@@ -10,7 +10,7 @@ o.number = true
 o.termguicolors = true
 
 o.inccommand = 'nosplit'
-o.completeopt = 'menuone,noselect'
+o.completeopt = 'menu,menuone,noselect'
 o.hlsearch = false
 o.ignorecase = true
 o.smartcase = true
