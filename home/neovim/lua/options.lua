@@ -1,7 +1,7 @@
 local g = vim.g
 local o = vim.o
 
-g.mapleader = ' ' 
+g.mapleader = ' '
 
 o.tabstop = 2
 o.shiftwidth = 2

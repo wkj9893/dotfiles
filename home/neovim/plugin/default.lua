@@ -1,8 +1,8 @@
 require('onedark').setup()
 require('lualine').setup {
   options = {
-    theme = 'onedark'
-  }
+    theme = 'onedark',
+  },
 }
 
 require('nvim-autopairs').setup()

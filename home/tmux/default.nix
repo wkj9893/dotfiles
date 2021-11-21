@@ -1,8 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  programs.tmux = {
-    enable = true;
-    prefix = "C-a";
-    terminal = "screen-256color";
-  };
+  home.packages = with pkgs; [
+    tmux
+  ];
+  home.file.".config/tmux/tmux.conf".source = ./tmux.conf;
 }

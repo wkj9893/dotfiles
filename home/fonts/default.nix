@@ -3,9 +3,7 @@
 {
   home.packages = with pkgs; [
     noto-fonts-cjk
-    (nerdfonts.override {
-      fonts = [ "CascadiaCode" ];
-    })
+    cascadia-code
   ];
 
   # https://wiki.archlinux.org/title/Localization/Simplified_Chinese

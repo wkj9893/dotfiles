@@ -6,7 +6,7 @@
     rnix-lsp
     clang-tools
     rust-analyzer
-    sumneko-lua-language-server
+    stylua
     nodePackages.pyright
     nodePackages.typescript-language-server
   ];

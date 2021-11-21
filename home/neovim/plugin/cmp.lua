@@ -12,8 +12,8 @@ cmp.setup {
         fallback()
       end
     end,
-    ['<CR>'] = cmp.mapping.confirm( { select = true } ),
-  }, 
+    ['<CR>'] = cmp.mapping.confirm { select = true },
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -24,4 +24,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-

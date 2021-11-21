@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./texlive ./tmux ./vscode ./zsh ];
+  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./texlive ./tmux ./zsh ];
   programs.home-manager = {
     enable = true;
   };
@@ -29,7 +29,7 @@
     ripgrep
     fzf
     tree
-    trash-cli
+    vscode
 
     deno
     rustup

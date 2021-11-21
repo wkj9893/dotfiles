@@ -2,20 +2,23 @@
 
 env:
   TERM: xterm-256color
-  http_proxy: http://localhost:7890
-  https_proxy: http://localhost:7890
-
-
+  
 font:
   normal:
-    family: CaskaydiaCove Nerd Font Mono
+    family: Cascadia Mono
     style: Regular
+
   bold:
-    family: CaskaydiaCove Nerd Font Mono
+    family: Cascadia Mono
     style: Bold
+
   italic:
-    family: CaskaydiaCove Nerd Font Mono
+    family: Cascadia Mono
     style: Italic
+
+  bold_italic:
+    family: Cascadia Mono 
+    style: Bold Italic
 
 # VSCode's integrated terminal default colors
 # Primary and dimmed colors needed

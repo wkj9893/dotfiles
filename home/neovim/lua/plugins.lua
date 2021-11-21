@@ -8,7 +8,7 @@ return require('packer').startup(function()
 
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
-  use 'nvim-treesitter/nvim-treesitter' 
+  use 'nvim-treesitter/nvim-treesitter'
 
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
@@ -19,5 +19,3 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 end)
-
-

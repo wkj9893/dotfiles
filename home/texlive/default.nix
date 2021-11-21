@@ -7,9 +7,11 @@
         inherit (texlive)
           scheme-basic
           collection-langchinese
+          collection-bibtexextra
           xetex
           luatex
-          everysel;
+          everysel
+          latexmk;
       }
     )
   ];
