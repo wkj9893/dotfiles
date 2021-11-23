@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./texlive ./tmux ./zsh ];
+  imports = [ ./alacritty ./fonts ./git ./gtk ./neovim ./texlive ./tmux ./vscode ./zsh ];
   programs.home-manager = {
     enable = true;
   };
@@ -27,14 +27,13 @@
     nixpkgs-fmt
     fd
     ripgrep
+    hyperfine
     fzf
     tree
-    vscode
 
     deno
     rustup
     go_1_17
-    clang_13
     nodejs-17_x
     (python310.withPackages (p: with p; [ pip ]))
   ];

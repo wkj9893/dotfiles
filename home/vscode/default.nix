@@ -8,7 +8,7 @@
       jnoortheen.nix-ide
       denoland.vscode-deno
       matklad.rust-analyzer
+      llvm-vs-code-extensions.vscode-clangd
     ];
   };
-  home.file.".config/Code/User/settings.json".source = ./settings.json;
 }

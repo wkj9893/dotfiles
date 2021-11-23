@@ -2,13 +2,6 @@
 {
   home.packages = with pkgs; [
     neovim-nightly
-    gopls
-    rnix-lsp
-    clang-tools
-    rust-analyzer
-    stylua
-    nodePackages.pyright
-    nodePackages.typescript-language-server
   ];
   xdg.configFile."nvim/init.lua".source = ./init.lua;
   xdg.configFile."nvim/lua/options.lua".source = ./lua/options.lua;
