@@ -1,7 +1,8 @@
 { pkgs, ... }:
+
 {
   home.packages = with pkgs; [
-    neovim-nightly
+    neovim
   ];
   xdg.configFile."nvim/init.lua".source = ./init.lua;
   xdg.configFile."nvim/lua/options.lua".source = ./lua/options.lua;

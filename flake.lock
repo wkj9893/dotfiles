@@ -1,20 +1,5 @@
 {
   "nodes": {
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1637014545,
-        "narHash": "sha256-26IZAc5yzlD9FlDT54io1oqG/bBoyka+FJk5guaX4x4=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "bba5dcc8e0b20ab664967ad83d24d64cb64ec4f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -32,31 +17,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "neovim-flake": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "contrib",
-        "lastModified": 1637598128,
-        "narHash": "sha256-/bEs1+BUDXf8aYbnpHQDa4x/l0qOZDeoAxL/MSODV3g=",
-        "owner": "neovim",
-        "repo": "neovim",
-        "rev": "fd6df7481a88006fd60bc8980b4db1000ddeda27",
-        "type": "github"
-      },
-      "original": {
-        "dir": "contrib",
-        "owner": "neovim",
-        "repo": "neovim",
         "type": "github"
       }
     },
@@ -78,9 +38,7 @@
     },
     "root": {
       "inputs": {
-        "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "neovim-flake": "neovim-flake",
         "nixpkgs": "nixpkgs"
       }
     }
