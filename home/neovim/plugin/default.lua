@@ -1,9 +1,9 @@
-require('onedark').setup()
 require('lualine').setup {
   options = {
-    theme = 'onedark',
+    theme = 'vscode',
   },
 }
+require('nvim-tree').setup()
 
 require('nvim-autopairs').setup()
 

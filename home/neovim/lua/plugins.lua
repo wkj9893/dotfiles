@@ -1,8 +1,9 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-
-  use 'navarasu/onedark.nvim'
+  
+  use 'Mofiqul/vscode.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 
   use 'dstein64/vim-startuptime'
 

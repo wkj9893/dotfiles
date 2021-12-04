@@ -21,11 +21,10 @@
       MANPAGER = "nvim +Man!";
     };
 
-    shellAliases = {
-      ll = "ls -l";
+    shellAliases = rec {
+      cat = "bat";
+      ls = "exa --group-directories-first";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      update = "pushd ~/.dotfiles && sudo nixos-rebuild switch --flake . && popd";
     };
-
   };
 }

@@ -3,28 +3,29 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  boot = {
+    cleanTmpDir = true;
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.editor = false;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   networking.hostName = "nixos";
   networking.useDHCP = false;
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
 
-  i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod.enabled = "ibus";
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ rime ];
   
-
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
   };
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  programs.sway.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -40,6 +41,9 @@
     vim
     git
     gcc11
+    gnumake
+    _7zz
+    htop
   ];
 
   nix = {

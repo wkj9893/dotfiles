@@ -15,3 +15,5 @@ o.hlsearch = false
 o.ignorecase = true
 o.smartcase = true
 o.signcolumn = 'yes'
+g.vscode_style = "dark"
+vim.cmd[[colorscheme vscode]]
