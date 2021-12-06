@@ -5,6 +5,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    dotDir = ".config/zsh";
 
     oh-my-zsh = {
       enable = true;
@@ -25,6 +26,8 @@
       cat = "bat";
       ls = "exa --group-directories-first";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      sound = "pactl set-sink-volume @DEFAULT_SINK@";
+      update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
     };
   };
 }
