@@ -18,14 +18,16 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  i18n.inputMethod.enabled = "ibus";
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ rime ];
-
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
   };
-  programs.sway.enable = true;
+
+  programs.sway = {
+   enable = true;
+   extraPackages = with pkgs; [ swaylock waybar ];
+   extraSessionCommands = "export GTK_THEME=Adwaita:dark";
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;

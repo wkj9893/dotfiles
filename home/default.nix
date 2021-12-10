@@ -12,6 +12,10 @@
     source = ../config;
   };
 
+  home.sessionVariables = {
+    GTK_THEME=Adwaita:dark;
+  };
+
   xdg.userDirs = {
     enable = true;
     desktop = "$HOME";
@@ -27,7 +31,7 @@
   home.packages = with pkgs; [
     alacritty
     firefox-wayland
-    (pkgs.google-chrome.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode"; })
+    (pkgs.google-chrome.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland"; })
     clash
     exa
     bat
@@ -40,7 +44,7 @@
     gh
     qutebrowser
     meson
-    light
+    brightnessctl 
 
     neovim
     vscode
@@ -50,9 +54,10 @@
     rustup
     go_1_17
     nodejs-17_x
-    (python310.withPackages (p: with p; [ pip ]))
+    (python310.withPackages (p: with p; [ pip adblock ]))
 
     noto-fonts-cjk
     cascadia-code
+
   ];
 }
