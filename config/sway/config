@@ -32,6 +32,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+j focus right
+bindsym $mod+k focus left
+
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -69,8 +72,8 @@ bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+minus scratchpad show
 
-
 bindsym Alt+c exec "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+bindsym Alt+f exec firefox
 bindsym Alt+g exec "google-chrome-stable --proxy-server=http://localhost:7890"
 bindsym Alt+q exec qutebrowser
 

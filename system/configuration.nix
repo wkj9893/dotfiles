@@ -24,9 +24,9 @@
   };
 
   programs.sway = {
-   enable = true;
-   extraPackages = with pkgs; [ swaylock waybar ];
-   extraSessionCommands = "export GTK_THEME=Adwaita:dark";
+    enable = true;
+    extraPackages = with pkgs; [ swaylock waybar ];
+    extraSessionCommands = "export GTK_THEME=Adwaita:dark";
   };
 
   sound.enable = true;

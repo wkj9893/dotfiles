@@ -12,9 +12,7 @@
     source = ../config;
   };
 
-  home.sessionVariables = {
-    GTK_THEME=Adwaita:dark;
-  };
+  fonts.fontconfig.enable = true;
 
   xdg.userDirs = {
     enable = true;
@@ -29,26 +27,24 @@
   };
 
   home.packages = with pkgs; [
-    alacritty
     firefox-wayland
-    (pkgs.google-chrome.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland"; })
-    clash
-    exa
-    bat
-    nixpkgs-fmt
-    fd
-    ripgrep
-    hyperfine
-    fzf
-    texlive.combined.scheme-full
-    gh
+    google-chrome 
     qutebrowser
-    meson
-    brightnessctl 
 
-    neovim
-    vscode
+    clash
+    fd
+    hyperfine
+    ripgrep
     tmux
+
+    gh
+    texlive.combined.scheme-full
+    brightnessctl
+    wl-clipboard
+
+    alacritty
+    neovim-nightly
+    vscode
 
     deno
     rustup
@@ -57,7 +53,12 @@
     (python310.withPackages (p: with p; [ pip adblock ]))
 
     noto-fonts-cjk
-    cascadia-code
+    sf-pro
+    sf-mono
 
+    clang-tools
+    gopls
+    rnix-lsp
+    nixpkgs-fmt
   ];
 }

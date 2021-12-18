@@ -5,19 +5,19 @@ env:
   
 font:
   normal:
-    family: Cascadia Mono
-    style: Regular
+    family: SF Mono 
+    style: Medium 
 
   bold:
-    family: Cascadia Mono
+    family: SF Mono
     style: Bold
 
   italic:
-    family: Cascadia Mono
-    style: Italic
+    family: SF Mono
+    style: Medium Italic
 
   bold_italic:
-    family: Cascadia Mono 
+    family: SF Mono 
     style: Bold Italic
 
 # VSCode's integrated terminal default colors
@@ -54,3 +54,7 @@ colors:
     magenta: '#d670d6'
     cyan:    '#29b8db'
     white:   '#e5e5e5'
+
+# TODO: when alacritty release add support for it
+# key_bindings:
+  # - { key: N, mods: Command, action: CreateNewWindow }

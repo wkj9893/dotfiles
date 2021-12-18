@@ -16,15 +16,13 @@
       CARGO_HOME = "$HOME/.local/cargo";
       RUSTUP_HOME = "$HOME/.local/rustup";
       GOPATH = "$HOME/.local/go";
-      EDITOR = "nvim";
+      EDITOR = "vim";
       http_proxy = "http://localhost:7890";
       https_proxy = "http://localhost:7890";
-      MANPAGER = "nvim +Man!";
     };
 
     shellAliases = rec {
-      cat = "bat";
-      ls = "exa --group-directories-first";
+      ls = "ls --group-directories-first";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
       sound = "pactl set-sink-volume @DEFAULT_SINK@";
       update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
