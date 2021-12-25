@@ -3,17 +3,12 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  boot = {
-    cleanTmpDir = true;
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.editor = false;
-      efi.canTouchEfiVariables = true;
-    };
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
   networking.useDHCP = false;
+  networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
@@ -55,6 +50,6 @@
     '';
   };
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }
 
