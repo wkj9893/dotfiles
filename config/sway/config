@@ -15,7 +15,6 @@ bindsym $mod+q kill
 
 bindsym $mod+l exec swaylock -c 000000
 
-floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 
@@ -67,15 +66,8 @@ bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
 
-
-bindsym $mod+Shift+minus move scratchpad
-
-bindsym $mod+minus scratchpad show
-
 bindsym Alt+c exec "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
-bindsym Alt+f exec firefox
 bindsym Alt+g exec "google-chrome-stable --proxy-server=http://localhost:7890"
-bindsym Alt+q exec qutebrowser
 
 bindsym Alt+h exec "brightnessctl s 1%-"
 bindsym Alt+j exec "pactl set-sink-volume @DEFAULT_SINK@ -1%"

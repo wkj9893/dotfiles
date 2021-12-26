@@ -1,6 +1,9 @@
-self: super: {
+self: super: rec{
+  commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode";
   google-chrome = super.google-chrome.override {
-    commandLineArgs =
-      "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode";
+    inherit commandLineArgs;
+  };
+  chromium = super.chromium.override {
+    inherit commandLineArgs;
   };
 }

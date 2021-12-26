@@ -12,6 +12,8 @@
     source = ../config;
   };
 
+  home.file.".vimrc".source = ./vimrc;
+
   fonts.fontconfig.enable = true;
 
   xdg.userDirs = {
@@ -27,9 +29,8 @@
   };
 
   home.packages = with pkgs; [
-    firefox-wayland
     google-chrome 
-    qutebrowser
+    chromium
 
     clash
     fd
@@ -37,6 +38,7 @@
     ripgrep
     tmux
 
+    _7zz
     gh
     texlive.combined.scheme-full
     brightnessctl

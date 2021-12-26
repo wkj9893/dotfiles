@@ -6,7 +6,7 @@ env:
 font:
   normal:
     family: SF Mono 
-    style: Medium 
+    style: Regular 
 
   bold:
     family: SF Mono
@@ -14,7 +14,7 @@ font:
 
   italic:
     family: SF Mono
-    style: Medium Italic
+    style: Regular Italic
 
   bold_italic:
     family: SF Mono 
