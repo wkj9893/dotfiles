@@ -26,6 +26,7 @@
       code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
       sound = "pactl set-sink-volume @DEFAULT_SINK@";
       update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
+      update-system = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     };
   };
 }

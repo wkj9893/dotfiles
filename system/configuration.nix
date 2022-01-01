@@ -17,6 +17,7 @@
     enable = true;
     displayManager.gdm.enable = true;
   };
+  virtualisation.docker.enable = true;
 
   programs.sway = {
     enable = true;
@@ -29,7 +30,7 @@
 
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 

@@ -29,14 +29,18 @@
   };
 
   home.packages = with pkgs; [
-    google-chrome 
+    google-chrome
     chromium
+    firefox-wayland
+    electron
+    nodePackages.pnpm
 
     clash
     fd
     hyperfine
     ripgrep
     tmux
+    patchelf
 
     _7zz
     gh
@@ -52,7 +56,6 @@
     rustup
     go_1_17
     nodejs-17_x
-    (python310.withPackages (p: with p; [ pip adblock ]))
 
     noto-fonts-cjk
     sf-pro
@@ -62,5 +65,7 @@
     gopls
     rnix-lsp
     nixpkgs-fmt
+
+    wofi
   ];
 }

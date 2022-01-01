@@ -67,6 +67,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 bindsym Alt+c exec "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+bindsym Alt+f exec firefox
 bindsym Alt+g exec "google-chrome-stable --proxy-server=http://localhost:7890"
 
 bindsym Alt+h exec "brightnessctl s 1%-"
