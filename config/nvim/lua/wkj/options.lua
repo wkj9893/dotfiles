@@ -9,4 +9,4 @@ o.wrap = false
 o.whichwrap = 'h,l'
 
 o.termguicolors = true
-vim.cmd 'colorscheme darkplus'
+vim.cmd 'colorscheme onedarker'

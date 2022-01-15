@@ -36,9 +36,11 @@
     nodePackages.pnpm
 
     clash
+    gdb
     fd
     hyperfine
     ripgrep
+    tokei
     tmux
     patchelf
 
@@ -52,8 +54,8 @@
     neovim-nightly
     vscode
 
+    clang_13
     deno
-    rustup
     go_1_17
     nodejs-17_x
 
@@ -65,7 +67,5 @@
     gopls
     rnix-lsp
     nixpkgs-fmt
-
-    wofi
   ];
 }

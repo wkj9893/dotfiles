@@ -1,7 +1,6 @@
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'LunarVim/darkplus.nvim'
   use 'LunarVim/onedarker.nvim'
   
   use "neovim/nvim-lspconfig"

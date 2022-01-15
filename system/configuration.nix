@@ -17,7 +17,6 @@
     enable = true;
     displayManager.gdm.enable = true;
   };
-  virtualisation.docker.enable = true;
 
   programs.sway = {
     enable = true;
@@ -27,10 +26,11 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
 
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
 
