@@ -8,11 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { home-manager, nixpkgs, ... }@inputs:
@@ -24,7 +19,6 @@
         inherit system;
         config = { allowUnfree = true; };
         overlays = [
-          inputs.neovim-nightly-overlay.overlay
           (import ./overlays/default.nix)
           (import ./overlays/apple-font.nix)
         ];

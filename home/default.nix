@@ -51,7 +51,7 @@
     wl-clipboard
 
     alacritty
-    neovim-nightly
+    neovim
     vscode
 
     clang_13
@@ -67,5 +67,6 @@
     gopls
     rnix-lsp
     nixpkgs-fmt
+    stylua
   ];
 }
