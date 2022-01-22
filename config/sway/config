@@ -2,7 +2,7 @@ set $mod Mod4
 
 default_border none
 
-output *  scale 2
+output * scale 2
 
 input type:touchpad {
   natural_scroll enabled
@@ -13,10 +13,10 @@ bindsym $mod+Return exec alacritty
 
 bindsym $mod+q kill
 
-bindsym $mod+l exec swaylock -c 000000
-
 
 bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+l exec swaylock -c 000000
 
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
@@ -31,8 +31,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+j focus right
-bindsym $mod+k focus left
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -67,7 +69,8 @@ bindsym $mod+f fullscreen
 
 bindsym Alt+c exec "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
 bindsym Alt+f exec firefox
-bindsym Alt+g exec "google-chrome-stable --proxy-server=socks5://127.0.0.1:7890"
+bindsym Alt+g exec "google-chrome-stable --proxy-server=socks://127.0.0.1:2021"
+bindsym Alt+w exec wireshark
 
 bindsym Alt+h exec "brightnessctl s 1%-"
 bindsym Alt+j exec "pactl set-sink-volume @DEFAULT_SINK@ -1%"

@@ -13,11 +13,11 @@
     };
 
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "nvim";
       GOPATH = "$HOME/.local/go";
       PATH = "$PATH:$HOME/.local/go/bin";
-      http_proxy = "socks5://127.0.0.1:7890";
-      https_proxy = "socks5://127.0.0.1:7890";
+      http_proxy = "http://127.0.0.1:2021";
+      https_proxy = "http://127.0.0.1:2021";
     };
 
     shellAliases = rec {

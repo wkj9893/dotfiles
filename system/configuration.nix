@@ -23,6 +23,10 @@
     extraPackages = with pkgs; [ swaylock waybar ];
     extraSessionCommands = "export GTK_THEME=Adwaita:dark";
   };
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -30,7 +34,7 @@
 
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" "wireshark" ];
     shell = pkgs.zsh;
   };
 

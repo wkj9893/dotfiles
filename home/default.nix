@@ -35,8 +35,6 @@
     electron
     nodePackages.pnpm
 
-    clash
-    gdb
     fd
     hyperfine
     ripgrep
