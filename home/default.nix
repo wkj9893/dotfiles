@@ -49,22 +49,15 @@
     wl-clipboard
 
     alacritty
-    neovim
-    vscode
+    vscodium
 
     clang_13
     deno
     go_1_17
     nodejs-17_x
 
-    noto-fonts-cjk
+    source-han-sans
     sf-pro
     sf-mono
-
-    clang-tools
-    gopls
-    rnix-lsp
-    nixpkgs-fmt
-    stylua
   ];
 }

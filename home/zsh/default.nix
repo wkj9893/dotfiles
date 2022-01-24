@@ -13,7 +13,7 @@
     };
 
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "vim";
       GOPATH = "$HOME/.local/go";
       PATH = "$PATH:$HOME/.local/go/bin";
       http_proxy = "http://127.0.0.1:2021";
