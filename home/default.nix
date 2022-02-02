@@ -49,9 +49,10 @@
     wl-clipboard
 
     alacritty
-    vscodium
+    vscode
 
     clang_13
+    clang-tools
     deno
     go_1_17
     nodejs-17_x

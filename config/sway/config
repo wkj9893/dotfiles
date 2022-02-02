@@ -81,4 +81,5 @@ bindsym Alt+l exec "brightnessctl s +1%"
 bar {
     swaybar_command waybar
 }
+
 include /etc/sway/config.d/*

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.zsh = {
@@ -25,6 +25,7 @@
       code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
       update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
       update-system = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+      ssh = "ssh -o ServerAliveInterval=60";
     };
   };
 }

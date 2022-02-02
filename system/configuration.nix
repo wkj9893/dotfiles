@@ -13,16 +13,16 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-  };
-
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [ swaylock waybar ];
     extraSessionCommands = "export GTK_THEME=Adwaita:dark";
   };
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+  };
+
   programs.wireshark = {
     enable = true;
     package = pkgs.wireshark;
@@ -32,9 +32,11 @@
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
 
+  virtualisation.docker.enable = true;
+
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "wireshark" ];
+    extraGroups = [ "wheel" "networkmanager" "wireshark" "docker" ];
     shell = pkgs.zsh;
   };
 
