@@ -41,7 +41,6 @@
     tokei
     tmux
     patchelf
-
     _7zz
     gh
     texlive.combined.scheme-full
