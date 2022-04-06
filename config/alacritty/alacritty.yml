@@ -55,6 +55,3 @@ colors:
     cyan:    '#29b8db'
     white:   '#e5e5e5'
 
-# TODO: when alacritty release add support for it
-# key_bindings:
-  # - { key: N, mods: Command, action: CreateNewWindow }

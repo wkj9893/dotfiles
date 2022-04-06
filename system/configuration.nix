@@ -17,12 +17,16 @@
 
   programs.sway = {
     enable = true;
-    extraPackages = with pkgs; [ swaylock waybar ];
+    extraPackages = with pkgs; [ swaylock waybar wl-clipboard rofi-wayland sway-contrib.grimshot ];
     extraSessionCommands = "export GTK_THEME=Adwaita:dark";
   };
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
+  };
+  services.code-server = {
+    enable = true;
+    user = "wkj";
   };
 
   programs.wireshark = {
@@ -46,10 +50,8 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    gcc11
     gnumake
-    _7zz
-    htop
+    tmux
   ];
 
   nix = {

@@ -9,17 +9,12 @@ input type:touchpad {
   tap enabled
 }
 
-bindsym $mod+Return exec alacritty
+floating_modifier $mod normal
 
 bindsym $mod+q kill
-
-
 bindsym $mod+Shift+c reload
-
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+l exec swaylock -c 000000
-
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -30,11 +25,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -65,21 +55,25 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+bindsym $mod+a focus parent
 bindsym $mod+f fullscreen
 
-bindsym Alt+c exec "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
-bindsym Alt+f exec firefox
-bindsym Alt+g exec "google-chrome-stable --proxy-server=socks://127.0.0.1:2021"
-bindsym Alt+w exec wireshark
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+bindsym Alt+r exec "rofi -show run"
+bindsym Alt+g exec "google-chrome-stable --ozone-platform-hint=auto --force-dark-mode --proxy-server=socks://127.0.0.1:1080"
 
 bindsym Alt+h exec "brightnessctl s 1%-"
 bindsym Alt+j exec "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 bindsym Alt+k exec "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 bindsym Alt+l exec "brightnessctl s +1%"
 
-
 bar {
-    swaybar_command waybar
+  swaybar_command waybar
 }
 
 include /etc/sway/config.d/*

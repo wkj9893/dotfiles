@@ -1,11 +1,4 @@
 self: super: rec {
-  commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --force-dark-mode";
-  google-chrome = super.google-chrome.override {
-    inherit commandLineArgs;
-  };
-  chromium = super.chromium.override {
-    inherit commandLineArgs;
-  };
   sway-unwrapped = super.sway-unwrapped.overrideAttrs (old: rec {
     version = "1.6.1";
     src = super.fetchFromGitHub {

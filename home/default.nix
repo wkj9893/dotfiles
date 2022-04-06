@@ -31,30 +31,26 @@
   home.packages = with pkgs; [
     google-chrome
     chromium
-    firefox-wayland
-    electron
-    nodePackages.pnpm
 
-    fd
-    hyperfine
-    ripgrep
     tokei
-    tmux
-    patchelf
-    _7zz
+    ripgrep
+    hyperfine
+    tdesktop
+
     gh
-    texlive.combined.scheme-full
     brightnessctl
-    wl-clipboard
 
+    neovim
     alacritty
-    vscode
+    texlive.combined.scheme-full
 
-    clang_13
-    clang-tools
     deno
-    go_1_17
+    gcc11
+    rustup
+    go_1_18
+    python3
     nodejs-17_x
+    nodePackages.pnpm
 
     source-han-sans
     sf-pro
