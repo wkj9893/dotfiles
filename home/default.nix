@@ -38,10 +38,11 @@
     tdesktop
 
     gh
+    htop
     brightnessctl
 
     neovim
-    alacritty
+    foot
     texlive.combined.scheme-full
 
     deno

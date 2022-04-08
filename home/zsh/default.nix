@@ -22,7 +22,7 @@
     };
 
     shellAliases = rec {
-      code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      vim = "nvim";
       update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
     };
   };
