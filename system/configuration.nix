@@ -15,18 +15,19 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  programs.sway = {
-    enable = true;
-    extraPackages = with pkgs; [ swaylock waybar wl-clipboard rofi-wayland sway-contrib.grimshot ];
-    extraSessionCommands = "export GTK_THEME=Adwaita:dark";
-  };
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
   };
+
   services.code-server = {
     enable = true;
     user = "wkj";
+  };
+
+  programs.sway = {
+    enable = true;
+    extraPackages = [];
   };
 
   programs.wireshark = {
@@ -46,12 +47,9 @@
     shell = pkgs.zsh;
   };
 
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim
     git
-    gnumake
-    tmux
+    vim
   ];
 
   nix = {

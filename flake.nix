@@ -19,7 +19,6 @@
         inherit system;
         config = { allowUnfree = true; };
         overlays = [
-          (import ./overlays/default.nix)
           (import ./overlays/apple-font.nix)
         ];
       };

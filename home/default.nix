@@ -1,11 +1,9 @@
 { pkgs, ... }:
 
 {
-  programs.home-manager = {
-    enable = true;
-  };
+  programs.home-manager.enable = true;
 
-  imports = [ ./zsh ];
+  imports = [ ./zsh.nix ];
 
   home.file.".config" = {
     recursive = true;
@@ -15,6 +13,26 @@
   home.file.".vimrc".source = ./vimrc;
 
   fonts.fontconfig.enable = true;
+
+  gtk = {
+    enable = true;
+    font = {
+      name = "SF Pro Text";
+    };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+    cursorTheme = {
+      size = 16;
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+  };
 
   xdg.userDirs = {
     enable = true;
@@ -31,18 +49,16 @@
   home.packages = with pkgs; [
     google-chrome
     chromium
-
-    tokei
-    ripgrep
-    hyperfine
     tdesktop
 
     gh
-    htop
-    brightnessctl
-
+    tokei
+    tmux
     neovim
-    foot
+    gnumake
+    ripgrep
+    hyperfine
+    nixpkgs-fmt
     texlive.combined.scheme-full
 
     deno
@@ -56,5 +72,13 @@
     source-han-sans
     sf-pro
     sf-mono
+
+    foot
+    waybar
+    swaylock
+    brightnessctl
+    wl-clipboard
+    rofi-wayland
+    sway-contrib.grimshot
   ];
 }
