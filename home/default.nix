@@ -10,8 +10,6 @@
     source = ../config;
   };
 
-  home.file.".vimrc".source = ./vimrc;
-
   fonts.fontconfig.enable = true;
 
   gtk = {
@@ -47,7 +45,7 @@
   };
 
   home.packages = with pkgs; [
-    google-chrome
+    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     chromium
     tdesktop
 
@@ -65,6 +63,7 @@
     gcc11
     rustup
     go_1_18
+    golangci-lint
     python3
     nodejs-17_x
     nodePackages.pnpm
@@ -80,5 +79,7 @@
     wl-clipboard
     rofi-wayland
     sway-contrib.grimshot
+
+    cloudflared
   ];
 }

@@ -20,6 +20,8 @@
     displayManager.gdm.enable = true;
   };
 
+  services.tailscale.enable = true;
+
   services.code-server = {
     enable = true;
     user = "wkj";
@@ -27,7 +29,7 @@
 
   programs.sway = {
     enable = true;
-    extraPackages = [];
+    extraPackages = [ ];
   };
 
   programs.wireshark = {

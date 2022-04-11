@@ -65,7 +65,6 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
 bindsym Alt+r exec "rofi -show run"
-bindsym Alt+g exec "google-chrome-stable --ozone-platform-hint=auto --force-dark-mode --proxy-server=socks://127.0.0.1:1080"
 
 bindsym Alt+h exec "brightnessctl s 1%-"
 bindsym Alt+j exec "pactl set-sink-volume @DEFAULT_SINK@ -1%"
