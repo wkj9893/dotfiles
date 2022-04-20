@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { home-manager, nixpkgs, ... }@inputs:
+  outputs = { home-manager, nixpkgs, ... }:
 
     let
       system = "x86_64-linux";

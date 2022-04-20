@@ -47,12 +47,11 @@
   home.packages = with pkgs; [
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     chromium
-    tdesktop
+    firefox-wayland
 
     gh
     tokei
     tmux
-    neovim
     gnumake
     ripgrep
     hyperfine
@@ -60,7 +59,6 @@
     texlive.combined.scheme-full
 
     deno
-    gcc11
     rustup
     go_1_18
     golangci-lint
@@ -81,5 +79,8 @@
     sway-contrib.grimshot
 
     cloudflared
+    helix
+    lazygit
+    delta
   ];
 }

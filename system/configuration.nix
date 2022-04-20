@@ -8,10 +8,9 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos";
-  networking.useDHCP = false;
-  networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
+  networking.proxy.default = "http://127.0.0.1:1080";
 
   time.timeZone = "Asia/Shanghai";
 
@@ -19,13 +18,14 @@
     enable = true;
     displayManager.gdm.enable = true;
   };
-
-  services.tailscale.enable = true;
-
+  
   services.code-server = {
     enable = true;
     user = "wkj";
   };
+
+  services.tailscale.enable = true;
+  security.sudo.wheelNeedsPassword = false;
 
   programs.sway = {
     enable = true;

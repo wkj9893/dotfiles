@@ -4,3 +4,7 @@
 [user]
 	email = "wkj9893@gmail.com"
 	name = "wkj"
+
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
