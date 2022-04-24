@@ -3,11 +3,31 @@
 {
   programs.home-manager.enable = true;
 
-  imports = [ ./zsh.nix ];
-
   home.file.".config" = {
     recursive = true;
     source = ../config;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "vim";
+    GOPATH = "$HOME/.local/go";
+    PATH = "$PATH:$HOME/.local/go/bin";
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    dotDir = ".config/zsh";
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
+
+    shellAliases = rec {
+      update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
+    };
   };
 
   fonts.fontconfig.enable = true;
@@ -48,10 +68,12 @@
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     chromium
     firefox-wayland
+    tdesktop
 
     gh
     tokei
     tmux
+    neovim
     gnumake
     ripgrep
     hyperfine
@@ -79,7 +101,6 @@
     sway-contrib.grimshot
 
     cloudflared
-    helix
     lazygit
     delta
   ];
