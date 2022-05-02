@@ -3,6 +3,8 @@
 {
   programs.home-manager.enable = true;
 
+  programs.direnv.enable = true;
+
   home.file.".config" = {
     recursive = true;
     source = ../config;
@@ -73,7 +75,6 @@
     gh
     tokei
     tmux
-    neovim
     gnumake
     ripgrep
     hyperfine
@@ -82,10 +83,9 @@
 
     deno
     rustup
+    clang-tools
     go_1_18
-    golangci-lint
-    python3
-    nodejs-17_x
+    nodejs-18_x
     nodePackages.pnpm
 
     source-han-sans
@@ -103,5 +103,6 @@
     cloudflared
     lazygit
     delta
+    neovim
   ];
 }

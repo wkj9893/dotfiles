@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -9,22 +9,20 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
   networking.proxy.default = "http://127.0.0.1:1080";
 
   time.timeZone = "Asia/Shanghai";
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
+    displayManager.autoLogin.user = "wkj";
   };
-  
+
   services.code-server = {
     enable = true;
     user = "wkj";
   };
 
-  services.tailscale.enable = true;
   security.sudo.wheelNeedsPassword = false;
 
   programs.sway = {
@@ -52,6 +50,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    gcc
   ];
 
   nix = {
