@@ -12,8 +12,6 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    GOPATH = "$HOME/.local/go";
-    PATH = "$PATH:$HOME/.local/go/bin";
   };
 
   programs.zsh = {
@@ -80,14 +78,7 @@
     hyperfine
     nixpkgs-fmt
     texlive.combined.scheme-full
-
-    deno
-    rustup
-    clang-tools
-    go_1_18
-    nodejs-18_x
-    nodePackages.pnpm
-
+    
     source-han-sans
     sf-pro
     sf-mono
@@ -100,9 +91,9 @@
     rofi-wayland
     sway-contrib.grimshot
 
+    deno
     cloudflared
     lazygit
     delta
-    neovim
   ];
 }

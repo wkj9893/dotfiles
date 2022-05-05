@@ -8,16 +8,17 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos";
+  networking.firewall.enable = false;
   networking.networkmanager.enable = true;
   networking.proxy.default = "http://127.0.0.1:1080";
 
   time.timeZone = "Asia/Shanghai";
-
+  
   services.xserver = {
     enable = true;
     displayManager.autoLogin.user = "wkj";
   };
-
+  
   services.code-server = {
     enable = true;
     user = "wkj";
@@ -40,17 +41,18 @@
   hardware.bluetooth.enable = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "wireshark" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "wireshark" "docker" "libvirtd" ];
     shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
     git
     vim
-    gcc
+    virt-manager
   ];
 
   nix = {
