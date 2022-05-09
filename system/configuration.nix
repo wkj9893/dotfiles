@@ -6,22 +6,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.hostName = "nixos";
-  networking.firewall.enable = false;
-  networking.networkmanager.enable = true;
-  networking.proxy.default = "http://127.0.0.1:1080";
+  
+  networking = {
+    useNetworkd = true;
+    firewall.enable = false;
+    wireless.iwd.enable = true;
+    interfaces.wlan0.useDHCP = true;
+    proxy.default = "http://127.0.0.1:1080";
+  };
 
   time.timeZone = "Asia/Shanghai";
-  
+
+  services.tailscale.enable = true;
   services.xserver = {
     enable = true;
     displayManager.autoLogin.user = "wkj";
-  };
-  
-  services.code-server = {
-    enable = true;
-    user = "wkj";
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -31,35 +30,31 @@
     extraPackages = [ ];
   };
 
-  programs.wireshark = {
+  security.rtkit.enable = true;
+  hardware.bluetooth.enable = true;
+  services.pipewire = {
     enable = true;
-    package = pkgs.wireshark;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.bluetooth.enable = true;
-
   virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "wireshark" "docker" "libvirtd" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
     git
     vim
-    virt-manager
+    gcc
   ];
 
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    extraOptions = "experimental-features = nix-command flakes";
   };
 
   system.stateVersion = "22.05";

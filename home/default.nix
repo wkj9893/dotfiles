@@ -3,8 +3,6 @@
 {
   programs.home-manager.enable = true;
 
-  programs.direnv.enable = true;
-
   home.file.".config" = {
     recursive = true;
     source = ../config;
@@ -12,6 +10,8 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    GOPATH = "$HOME/.local/go";
+    PATH = "$PATH:$HOME/.local/go/bin";
   };
 
   programs.zsh = {
@@ -78,22 +78,27 @@
     hyperfine
     nixpkgs-fmt
     texlive.combined.scheme-full
-    
+
     source-han-sans
     sf-pro
     sf-mono
+    
+    go_1_18
+    deno
+    nodejs-18_x
+    clang_14
+    cargo 
+    rustc
 
     foot
     waybar
     swaylock
+    pulseaudio
     brightnessctl
     wl-clipboard
     rofi-wayland
     sway-contrib.grimshot
 
-    deno
     cloudflared
-    lazygit
-    delta
   ];
 }
