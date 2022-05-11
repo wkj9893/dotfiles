@@ -66,17 +66,18 @@
 
   home.packages = with pkgs; [
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
-    chromium
     firefox-wayland
     tdesktop
 
     gh
-    tokei
     tmux
+    tokei
+    neovim
     gnumake
     ripgrep
     hyperfine
     nixpkgs-fmt
+    cloudflared
     texlive.combined.scheme-full
 
     source-han-sans
@@ -86,6 +87,7 @@
     go_1_18
     deno
     nodejs-18_x
+    nodePackages.pnpm
     clang_14
     cargo 
     rustc
@@ -99,6 +101,6 @@
     rofi-wayland
     sway-contrib.grimshot
 
-    cloudflared
+    openvscode-server
   ];
 }
