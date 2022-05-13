@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./go ./js ./nix ./rust ./zsh ./font ./nvim ];
+  imports = [ ./go ./js ./nix ./rust ./git ./zsh ./font ./nvim ];
 
   home.file.".config" = {
     recursive = true;
@@ -48,7 +48,6 @@
     openvscode-server
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
 
-    gh
     tmux
     tokei
     gnumake
