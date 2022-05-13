@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./go ./js ./nix ./rust ./git ./zsh ./font ./nvim ];
+  imports = [ ./lang ./git ./font ./nvim ];
 
   home.file.".config" = {
     recursive = true;
@@ -9,6 +9,17 @@
   };
 
   home.shellAliases.update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
+  };
 
   gtk = {
     enable = true;
