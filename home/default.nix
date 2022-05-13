@@ -1,36 +1,14 @@
 { pkgs, ... }:
 
 {
-  programs.home-manager.enable = true;
+  imports = [ ./go ./js ./nix ./rust ./zsh ./font ./nvim ];
 
   home.file.".config" = {
     recursive = true;
     source = ../config;
   };
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-    GOPATH = "$HOME/.local/go";
-    PATH = "$PATH:$HOME/.local/go/bin";
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    dotDir = ".config/zsh";
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-    };
-
-    shellAliases = rec {
-      update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
-    };
-  };
-
-  fonts.fontconfig.enable = true;
+  home.shellAliases.update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
 
   gtk = {
     enable = true;
@@ -65,32 +43,19 @@
   };
 
   home.packages = with pkgs; [
-    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
-    firefox-wayland
     tdesktop
+    firefox-wayland
+    openvscode-server
+    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
 
     gh
     tmux
     tokei
-    neovim
     gnumake
     ripgrep
     hyperfine
-    nixpkgs-fmt
     cloudflared
     texlive.combined.scheme-full
-
-    source-han-sans
-    sf-pro
-    sf-mono
-    
-    go_1_18
-    deno
-    nodejs-18_x
-    nodePackages.pnpm
-    clang_14
-    cargo 
-    rustc
 
     foot
     waybar
@@ -100,7 +65,5 @@
     wl-clipboard
     rofi-wayland
     sway-contrib.grimshot
-
-    openvscode-server
   ];
 }
