@@ -5,24 +5,24 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = 1;
     "net.ipv6.conf.all.forwarding" = 1;
     "net.core.rmem_max" = 2500000;
   };
 
+  time.timeZone = "Asia/Shanghai";
+
   networking = {
     useNetworkd = true;
     firewall.enable = false;
     wireless.iwd.enable = true;
-    interfaces.wlan0.useDHCP = true;
     proxy.default = "http://127.0.0.1:1080";
   };
-
-  time.timeZone = "Asia/Shanghai";
+  services.resolved.dnssec = "false";
 
   services.tailscale.enable = true;
+
   services.xserver = {
     enable = true;
     displayManager.autoLogin.user = "wkj";
