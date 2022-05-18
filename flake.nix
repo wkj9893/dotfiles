@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -35,7 +35,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.wkj = import ./home;
-          nix.registry.nixpkgs.flake = nixpkgs;
         }
       ];
     };
