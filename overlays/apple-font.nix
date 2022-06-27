@@ -21,7 +21,7 @@ self: super: rec {
 
       src = super.fetchurl {
         url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
-        sha256 = "sha256-4ITyRyc8kVE+tNOSeniu5fm/xo2vebszszCvy+f/t9w=";
+        sha256 = "sha256-g/SzgU3vOzm8uRuA6AN/N8Tnrl2Vpya58hx99dGfecI=";
       };
 
       inherit nativeBuildInputs unpackCmd sourceRoot installPhase;
@@ -33,7 +33,7 @@ self: super: rec {
 
       src = super.pkgs.fetchurl {
         url = "https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg";
-        sha256 = "sha256-ZXGWbBH3SqZKRu83dPyDdvgi5Y0beFv1wsiZIOdbDZQ=";
+        sha256 = "sha256-jnhTTmSy5J8MJotbsI8g5hxotgjvyDbccymjABwajYw=";
       };
 
       inherit nativeBuildInputs unpackCmd sourceRoot installPhase;

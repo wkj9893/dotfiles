@@ -10,8 +10,9 @@
     };
   };
 
-  outputs = { home-manager, nixpkgs, ... }: rec {
+  outputs = { self, home-manager, nixpkgs }: rec {
     system = "x86_64-linux";
+    username = "wkj";
 
     pkgs = import nixpkgs {
       inherit system;
@@ -19,11 +20,9 @@
       overlays = [ (import ./overlays/apple-font.nix) ];
     };
 
-    homeManagerConfigurations.wkj = home-manager.lib.homeManagerConfiguration {
-      inherit system pkgs;
-      homeDirectory = "/home/wkj";
-      username = "wkj";
-      configuration.imports = [ ./home ];
+    homeManagerConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [ ./home ];
     };
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -34,7 +33,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.wkj = import ./home;
+          home-manager.users.${username} = import ./home;
         }
       ];
     };

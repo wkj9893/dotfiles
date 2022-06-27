@@ -10,6 +10,7 @@
     "net.ipv6.conf.all.forwarding" = 1;
     "net.core.rmem_max" = 2500000;
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   time.timeZone = "Asia/Shanghai";
 
@@ -19,7 +20,6 @@
     wireless.iwd.enable = true;
     proxy.default = "http://127.0.0.1:1080";
   };
-  services.resolved.dnssec = "false";
 
   services.tailscale.enable = true;
 
@@ -35,7 +35,6 @@
     extraPackages = [ ];
   };
 
-  security.rtkit.enable = true;
   hardware.bluetooth.enable = true;
   services.pipewire = {
     enable = true;
@@ -45,9 +44,10 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" ];
     shell = pkgs.zsh;
   };
 
@@ -55,13 +55,11 @@
     git
     vim
     gcc
+    virt-manager
   ];
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-  };
+  nix.extraOptions = "experimental-features = nix-command flakes";
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "22.11";
 }
 

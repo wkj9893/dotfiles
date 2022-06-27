@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./lang ./git ./font ./nvim ];
+  imports = [ ./lang ./git ./font ./vim ./nvim ];
 
   home.file.".config" = {
     recursive = true;
@@ -57,8 +57,16 @@
   home.packages = with pkgs; [
     tdesktop
     firefox-wayland
-    openvscode-server
+    brave
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
+    ((vscode.override { isInsiders = true; }).overrideAttrs
+      (oldAttrs: {
+        src = (builtins.fetchTarball {
+          url = "https://update.code.visualstudio.com/latest/linux-x64/insider";
+          sha256 = "06qnzv8b7id4si4fkvcbg78pp3w770kfx6cfh25mjgwb2gj8mfz6";
+        });
+        version = "latest";
+      }))
 
     tmux
     tokei
@@ -66,7 +74,6 @@
     ripgrep
     hyperfine
     cloudflared
-    texlive.combined.scheme-full
 
     foot
     waybar
@@ -77,4 +84,9 @@
     rofi-wayland
     sway-contrib.grimshot
   ];
+  home = {
+    username = "wkj";
+    homeDirectory = "/home/wkj";
+    stateVersion = "22.11";
+  };
 }
