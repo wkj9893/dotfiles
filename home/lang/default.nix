@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./go.nix ./js.nix ./py.nix ./nix.nix ./rust.nix ];
+  imports = [ ./c.nix ./go.nix ./js.nix ./py.nix ./nix.nix ./rust.nix ];
 }

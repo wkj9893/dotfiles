@@ -37,5 +37,11 @@
         }
       ];
     };
+
+    nixosConfigurations.great-beams = nixpkgs.lib.nixosSystem {
+      inherit system pkgs;
+      modules = [ ./great-beams/configuration.nix ];
+    };
+
   };
 }

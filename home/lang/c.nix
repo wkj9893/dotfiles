@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    neovim
+    clang_14
+    clang-tools_14
   ];
 }

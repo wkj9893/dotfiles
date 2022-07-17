@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    python311
+    python3
   ];
 }

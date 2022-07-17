@@ -44,18 +44,16 @@
   };
 
   virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
     git
     vim
-    gcc
-    virt-manager
+    gcc12
   ];
 
   nix.extraOptions = "experimental-features = nix-command flakes";
