@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./lang ./git ./font ./vim ./nvim ];
+  imports = [ ./lang ./git ./font ./vim ];
 
   home.file.".config" = {
     recursive = true;
@@ -57,17 +57,9 @@
   home.packages = with pkgs; [
     tdesktop
     firefox-wayland
-    (chromium.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
-    (vscode.overrideAttrs
-      (_: {
-        version = "1.69.0";
-        src = fetchurl {
-          name = "VSCode_1.69.0_linux-x64.tar.gz";
-          url = "https://update.code.visualstudio.com/1.69.0/linux-x64/stable";
-          sha256 = "sha256-Bm//1KeDJNphX1ff4VvpVUGugH/3S6J8WRe4POSxF84=";
-        };
-      }))
+    vscode
+    helix
 
     tmux
     tokei

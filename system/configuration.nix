@@ -53,7 +53,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
-    gcc12
+    gcc
   ];
 
   nix.extraOptions = "experimental-features = nix-command flakes";
