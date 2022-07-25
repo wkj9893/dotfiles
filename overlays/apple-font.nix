@@ -21,7 +21,7 @@ self: super: rec {
 
       src = super.fetchurl {
         url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
-        sha256 = "sha256-g/SzgU3vOzm8uRuA6AN/N8Tnrl2Vpya58hx99dGfecI=";
+        sha256 = "sha256-o1Zis9kymOicTyDdTPGON2A5LNpDbgOD1XtyQOdxc0M=";
       };
 
       inherit nativeBuildInputs unpackCmd sourceRoot installPhase;
