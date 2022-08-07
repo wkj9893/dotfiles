@@ -3,8 +3,8 @@ self: super: rec {
 
   unpackCmd = ''
     7zz x $curSrc
-    find . -name "*.pkg" -print -exec 7zz x {} \;
-    find . -name "Payload~" -print -exec 7zz x {} \;
+    find . -name "*.pkg" -exec 7zz x {} \;
+    find . -name "Payload~" -exec 7zz x {} \;
   '';
 
   sourceRoot = "./Library/Fonts";
