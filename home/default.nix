@@ -12,15 +12,10 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
     enableCompletion = true;
     enableAutosuggestions = true;
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-    };
   };
+  programs.starship.enable = true;
 
   gtk = {
     enable = true;
@@ -59,7 +54,6 @@
     firefox-wayland
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     vscode
-    helix
 
     tmux
     tokei

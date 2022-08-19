@@ -26,16 +26,4 @@ self: super: rec {
 
       inherit nativeBuildInputs unpackCmd sourceRoot installPhase;
     };
-  sf-mono = super.stdenv.mkDerivation
-    {
-      pname = "sf-mono";
-      version = "1.0";
-
-      src = super.pkgs.fetchurl {
-        url = "https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg";
-        sha256 = "sha256-jnhTTmSy5J8MJotbsI8g5hxotgjvyDbccymjABwajYw=";
-      };
-
-      inherit nativeBuildInputs unpackCmd sourceRoot installPhase;
-    };
 }
