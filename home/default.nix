@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./lang ./git ./font ./vim ];
+  imports = [ ./lang ./font ./firefox.nix ./git.nix ./vim.nix ];
 
   home.file.".config" = {
     recursive = true;
@@ -51,7 +51,6 @@
 
   home.packages = with pkgs; [
     tdesktop
-    firefox-wayland
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
     vscode
 

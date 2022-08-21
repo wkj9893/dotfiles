@@ -18,7 +18,6 @@
     useNetworkd = true;
     firewall.enable = false;
     wireless.iwd.enable = true;
-    proxy.default = "http://127.0.0.1:1080";
   };
 
   services.tailscale.enable = true;
@@ -44,6 +43,7 @@
   };
 
   virtualisation.docker.enable = true;
+
   users.users.wkj = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ];

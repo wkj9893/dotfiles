@@ -26,7 +26,7 @@
     git
     vim
     tmux
-    go_1_18
+    go_1_19
   ];
 
   nix.extraOptions = "experimental-features = nix-command flakes";
