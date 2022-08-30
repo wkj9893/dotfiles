@@ -34,6 +34,13 @@
     extraPackages = [ ];
   };
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+    ];
+  };
+
   hardware.bluetooth.enable = true;
   services.pipewire = {
     enable = true;
@@ -43,10 +50,14 @@
   };
 
   virtualisation.docker.enable = true;
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 
   users.users.wkj = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "wireshark" ];
     shell = pkgs.zsh;
   };
 

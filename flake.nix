@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs }: rec {
+  outputs = { home-manager, nixpkgs, ... }: rec {
     system = "x86_64-linux";
     username = "wkj";
 

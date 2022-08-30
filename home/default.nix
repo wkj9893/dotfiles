@@ -14,8 +14,16 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
   };
-  programs.starship.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    prefix = "C-a";
+  };
 
   gtk = {
     enable = true;
@@ -51,10 +59,9 @@
 
   home.packages = with pkgs; [
     tdesktop
-    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode"; })
+    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder,webgpu"; })
     vscode
 
-    tmux
     tokei
     gnumake
     ripgrep
