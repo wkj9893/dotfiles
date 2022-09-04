@@ -14,6 +14,7 @@
     checkReversePath = "loose";
   };
 
+  programs.mosh.enable = true;
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6P9EejBPXJ9BCEoLAXWZTKC2xlIgOJZgkSq/mWLhwn wkj9893@gmail.com"

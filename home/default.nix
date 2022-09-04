@@ -9,6 +9,7 @@
   };
 
   home.shellAliases.update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
+  home.sessionVariables.NIXOS_OZONE_WL = 1;
 
   programs.zsh = {
     enable = true;
@@ -62,10 +63,12 @@
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder,webgpu"; })
     vscode
 
+    mosh
     tokei
     gnumake
     ripgrep
     hyperfine
+    dnsutils
     cloudflared
 
     foot
