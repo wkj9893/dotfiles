@@ -62,8 +62,8 @@
     tdesktop
     (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder,webgpu"; })
     vscode
+    helix
 
-    mosh
     tokei
     gnumake
     ripgrep
@@ -73,7 +73,6 @@
 
     foot
     waybar
-    swaylock
     pulseaudio
     brightnessctl
     wl-clipboard

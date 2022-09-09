@@ -20,6 +20,13 @@
     wireless.iwd.enable = true;
   };
 
+  services.resolved = {
+    dnssec = "false";
+    extraConfig = ''
+      DNS=223.5.5.5
+      Domains=~.
+    '';
+  };
   services.tailscale.enable = true;
 
   services.xserver = {
