@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./homebrew.nix ];
+
   environment.systemPackages = with pkgs; [
     vim
+    git
   ];
 
   services.nix-daemon.enable = true;
