@@ -20,5 +20,4 @@
       set noswapfile
     '';
   };
-  home.sessionVariables.EDITOR = "vim";
 }

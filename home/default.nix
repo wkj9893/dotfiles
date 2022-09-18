@@ -9,7 +9,10 @@
   };
 
   home.shellAliases.update-home = "nix run ~/.dotfiles#homeManagerConfigurations.wkj.activationPackage";
-  home.sessionVariables.NIXOS_OZONE_WL = 1;
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = 1;
+    EDITOR = "vim";
+  };
 
   programs.zsh = {
     enable = true;
@@ -21,10 +24,6 @@
     };
   };
 
-  programs.tmux = {
-    enable = true;
-    prefix = "C-a";
-  };
 
   gtk = {
     enable = true;
@@ -60,16 +59,19 @@
 
   home.packages = with pkgs; [
     tdesktop
-    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder,webgpu"; })
+    (google-chrome.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder"; })
+    (google-chrome-dev.override { commandLineArgs = "--ozone-platform-hint=auto --force-dark-mode --enable-features=Vulkan,VaapiVideoDecoder,VaapiVideoEncoder"; })
     vscode
     helix
 
+    tmux
     tokei
     gnumake
     ripgrep
     hyperfine
     dnsutils
     cloudflared
+    linux-wifi-hotspot
 
     foot
     waybar
