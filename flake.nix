@@ -48,19 +48,6 @@
         modules = [ ./great-beams/configuration.nix ];
       };
 
-      packages.darwinConfigurations.wkj = darwin.lib.darwinSystem {
-        inherit system pkgs;
-        modules = [
-          ./macos/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./macos/home;
-          }
-        ];
-      };
-
     }
   );
 }
