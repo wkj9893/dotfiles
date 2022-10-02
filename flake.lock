@@ -1,100 +1,79 @@
 {
   "nodes": {
-  "darwin": {
-  "inputs": {
-  "nixpkgs": [
-  "nixpkgs"
-  ]
-  },
-  "locked": {
-  "lastModified": 1663492236,
-  "narHash": "sha256-KzgrcFVhv/Ca7m83SaijE0W+tLHzjoypHZm9gHGS+cY=",
-  "owner": "lnl7",
-  "repo": "nix-darwin",
-  "rev": "de4d41ee9fd12a60236c1f35cead7c511dac08eb",
-  "type": "github"
-  },
-  "original": {
-  "owner": "lnl7",
-  "repo": "nix-darwin",
-  "type": "github"
-  }
-  },
-  "flake-utils": {
-  "locked": {
-  "lastModified": 1659877975,
-  "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
-  "owner": "numtide",
-  "repo": "flake-utils",
-  "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
-  "type": "github"
-  },
-  "original": {
-  "owner": "numtide",
-  "repo": "flake-utils",
-  "type": "github"
-  }
-  },
-  "home-manager": {
-  "inputs": {
-  "nixpkgs": [
-  "nixpkgs"
-  ],
-  "utils": "utils"
-  },
-  "locked": {
-  "lastModified": 1663099612,
-  "narHash": "sha256-ucokjFDRwCFWbcGiqxz0mfHv82UqwyW7RXY6ZgKSl80=",
-  "owner": "nix-community",
-  "repo": "home-manager",
-  "rev": "60c6bfe322944d04bb38e76b64effcbd01258824",
-  "type": "github"
-  },
-  "original": {
-  "owner": "nix-community",
-  "repo": "home-manager",
-  "type": "github"
-  }
-  },
-  "nixpkgs": {
-  "locked": {
-  "lastModified": 1662996720,
-  "narHash": "sha256-XvLQ3SuXnDMJMpM1sv1ifPjBuRytiDYhB12H/BNTjgY=",
-  "owner": "NixOS",
-  "repo": "nixpkgs",
-  "rev": "5f326e2a403e1cebaec378e72ceaf5725983376d",
-  "type": "github"
-  },
-  "original": {
-  "id": "nixpkgs",
-  "ref": "nixos-unstable",
-  "type": "indirect"
-  }
-  },
-  "root": {
-  "inputs": {
-  "darwin": "darwin",
-  "flake-utils": "flake-utils",
-  "home-manager": "home-manager",
-  "nixpkgs": "nixpkgs"
-  }
-  },
-  "utils": {
-  "locked": {
-  "lastModified": 1653893745,
-  "narHash": "sha256-0jntwV3Z8//YwuOjzhV2sgJJPt+HY6KhU7VZUL0fKZQ=",
-  "owner": "numtide",
-  "repo": "flake-utils",
-  "rev": "1ed9fb1935d260de5fe1c2f7ee0ebaae17ed2fa1",
-  "type": "github"
-  },
-  "original": {
-  "owner": "numtide",
-  "repo": "flake-utils",
-  "type": "github"
-  }
-  }
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1664573442,
+        "narHash": "sha256-AovlSIuJfMf8n9QLNUVtsCul+NVHIoen7APH2fLls3k=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "a7f0cc2d7b271b4a5df9b9e351d556c172f7e903",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1664538465,
+        "narHash": "sha256-EnlC7dDKX7X1wlnXkB1gmn9rBZQ0J9+biVTZHw//8us=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "10ecda252ce1b3b1d6403caeadbcc8f30d5ab796",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
   },
   "root": "root",
   "version": 7
-  }
+}
