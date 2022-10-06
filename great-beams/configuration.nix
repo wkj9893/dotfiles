@@ -9,12 +9,8 @@
     "net.core.rmem_max" = 2500000;
   };
   networking.hostName = "great-beams";
-  networking.firewall = {
-    allowedTCPPorts = [ 80 443 ];
-    checkReversePath = "loose";
-  };
+  networking.firewall.enable = false;
 
-  programs.mosh.enable = true;
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6P9EejBPXJ9BCEoLAXWZTKC2xlIgOJZgkSq/mWLhwn wkj9893@gmail.com"
